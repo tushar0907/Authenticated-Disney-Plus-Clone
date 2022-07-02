@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import ImgSlider from "../components/ImgSlider";
 import Viewers from "../components/Viewers";
+import Movies from "../components/Movies";
 
 const Home = () => {
   return (
     <Container>
       <ImgSlider />
       <Viewers />
+      <Movies />
     </Container>
   );
 };
@@ -15,6 +17,9 @@ const Home = () => {
 export default Home;
 
 const Container = styled.main`
+width: 95%;
+margin-left: auto;
+margin-right: auto;
 min-height: calc(100vh - 70px)
 padding: 0 calc(3.5vw + 5px)
 position: relative;
