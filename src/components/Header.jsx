@@ -1,10 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import {auth, provider} from "../firebase";
+
+import {selectUserName, selectUserPhoto} from "../features/user/userSlice";
+import {useSelector} from "react-redux";
 
 const Header = () => {
+  const userName = useSelector(selectUserName);
+  const userPhoto = useSelector(selectUserPhoto);
+
+  const signIn = () => {
+    auth.signInWithPopup(provider).then((result) => {
+      console.log(result);
+    });
+  };
   return (
     <Nav>
       <Logo src="/images/logo.svg" />
+      {/* <LoginContainer>
+        <Login onClick={signIn}>Login</Login>
+      </LoginContainer> */}
       <NavMenu>
         <a>
           <img src="/images/home-icon.svg" />
@@ -31,12 +46,35 @@ const Header = () => {
           <span>SERIES</span>
         </a>
       </NavMenu>
-      <UserImg src="" />
+      <UserImg src="/images/CCC.png" />
     </Nav>
   );
 };
 
 export default Header;
+
+const Login = styled.div`
+  border: 1px solid #f9f9f9;
+  padding: 8px 16px;
+  border-radius: 4px;
+  letter-spacing: 1.5px;
+  text-transfrom: uppercase;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    border-color: transparent;
+  }
+`;
+
+const LoginContainer = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+`;
 
 const Nav = styled.nav`
   height: 70px;
@@ -97,6 +135,8 @@ const NavMenu = styled.div`
 `;
 
 const UserImg = styled.img`
-width: 48px;
-height: 48px;border-radius: 50%
-cursor: pointer`;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+`;

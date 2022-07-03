@@ -1,15 +1,44 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import ImgSlider from "../components/ImgSlider";
 import Viewers from "../components/Viewers";
 import Movies from "../components/Movies";
+import db from "../firebase";
+import {useDispatch} from "react-redux";
+import {setMovies} from "../features/movie/movieSlice";
 
 const Home = () => {
+  const [data, setData] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetch_movie = async () => {
+      await fetch(
+        "https://fake-movie-database-api.herokuapp.com/api?s=batman      "
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          setData(res.Search);
+        });
+    };
+    fetch_movie();
+  }, []);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    db.collection("movies").onSnapshot((snapshot) => {
+      let tempMovies = snapshot.docs.map((doc) => {
+        return {id: doc.id, ...doc.data()};
+      });
+      dispatch(setMovies(tempMovies));
+    });
+  }, []);
   return (
     <Container>
       <ImgSlider />
       <Viewers />
-      <Movies />
+      <Movies data={data} />
     </Container>
   );
 };

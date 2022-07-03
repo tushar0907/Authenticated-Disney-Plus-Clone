@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import {useParams} from "react-router-dom";
 
 const Detail = () => {
+  const {id} = useParams();
+  console.log(id);
+
   return (
     <Container>
       <Background>
         <img src="https://images3.alphacoders.com/124/1241167.png" />
       </Background>
       <ImageTitle>
-        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/d0b9ecb1-870c-4553-bf63-707fecf01958/deama4y-20cd7aee-2c86-4401-a675-f1fba14c1e34.png" />
+        <img src="http://images6.fanpop.com/image/photos/43900000/Thor-Love-and-Thunder-May-6-2022-the-avengers-43925014-640-274.gif" />
       </ImageTitle>
       <Controls>
         <PlayButton>
@@ -60,20 +64,26 @@ const Background = styled.div`
 
 const ImageTitle = styled.div`
   height: 30vh;
+  display: flex;
   min-height: 170px;
-  width: 35vw;
+  width: 30vw;
   min-width: 200px;
+  margin-top: 60px;
 
   img {
+    display: flex;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: conatin;
+    border-radius: 10px;
   }
 `;
 
 const Controls = styled.div`
   display: flex;
   align-items: center;
+  justify-content: start;
+  margin-top: 20px;
 `;
 
 const PlayButton = styled.button`
@@ -131,4 +141,5 @@ const Description = styled.div`
   font-size: 20px;
   margin-top: 16px;
   color: rgb(249, 249, 249);
+  max-width: 700px;
 `;

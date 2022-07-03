@@ -1,34 +1,92 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
-const Movies = () => {
+const Movies = ({data}) => {
   return (
     <Container>
       <h4>Recommended for You</h4>
       <Content>
+        {data?.map((item) => (
+          <Wrap>
+            <img src={item.poster} />
+          </Wrap>
+        ))}
+
         <Wrap>
-          <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          <Link to={`/detail`}>
+            <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          </Link>
         </Wrap>
         <Wrap>
-          <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          <Link to={`/detail`}>
+            <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          </Link>
         </Wrap>
         <Wrap>
-          <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          <Link to={`/detail`}>
+            <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          </Link>
         </Wrap>
         <Wrap>
-          <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Luq2aEeRoKQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </Wrap>
         <Wrap>
-          <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/QnMMm7059yI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </Wrap>
         <Wrap>
-          <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/gim2kprjL50"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </Wrap>
         <Wrap>
-          <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/aWzlQ2N6qqg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </Wrap>
         <Wrap>
-          <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          <Link to={`/detail`}>
+            <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          </Link>
+        </Wrap>
+        <Wrap>
+          <Link to={`/detail`}>
+            <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          </Link>
+        </Wrap>
+        <Wrap>
+          <Link to={`/detail`}>
+            <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          </Link>
+        </Wrap>
+        <Wrap>
+          <Link to={`/detail`}>
+            <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/06/thor-love-and-thunder-1654244090.jpg" />
+          </Link>
         </Wrap>
       </Content>
     </Container>
